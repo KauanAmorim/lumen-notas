@@ -16,3 +16,10 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['prefix' => 'Notas'], function() use ($router) {
+    $router->get('/', 'NotasController@index');
+    $router->get('/{id}', 'NotasController@show');
+    $router->post('/', 'NotasController@store');
+});
+
