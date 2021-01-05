@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Notas;
 use Illuminate\Http\Request;
-
 class NotasController extends Controller
 {
     public function index()
     {
-        echo 'Olá, mundo!';
+        var_dump(Notas::all());
     }
 
     public function show($id)
