@@ -17,9 +17,15 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->group(['prefix' => 'Notas'], function() use ($router) {
-    $router->get('/', 'NotasController@index');
-    $router->get('/{id}', 'NotasController@show');
-    $router->post('/', 'NotasController@store');
+$router->group(['prefix' => 'Note'], function() use ($router) {
+    $router->get('/', 'NoteController@index');
+    $router->get('/{id}', 'NoteController@show');
+    $router->post('/', 'NoteController@store');
 });
 
+
+$router->group(['prefix' => 'Folder'], function() use ($router) {
+    $router->get('/', 'FolderController@index');
+    $router->get('/{id}', 'FolderController@show');
+    $router->post('/', 'FolderController@store');
+});

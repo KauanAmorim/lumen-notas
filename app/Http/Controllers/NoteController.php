@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Notas;
+use App\Models\Note;
 use Illuminate\Http\Request;
-class NotasController extends Controller
+
+class NoteController extends Controller
 {
     public function index()
     {
-        var_dump(Notas::all());
+        // var_dump(Note::all());
     }
 
     public function show($id)
@@ -20,11 +21,14 @@ class NotasController extends Controller
     public function store(Request $request)
     {
         // echo 'Houve uma tentativa no POST';
+        // $Note = new Note;
+        // $Note->title
+
         echo '<pre>';
         var_dump($request->title);
-        var_dump($request->input('title'));
         var_dump($request->description);
-        var_dump($request);
+        var_dump($request->folder_id);
+        var_dump($request->archived);
         echo '</pre>';
     }
 
