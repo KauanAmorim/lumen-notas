@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePastaTable extends Migration
+class CreateFoldersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreatePastaTable extends Migration
      */
     public function up()
     {
-        Schema::create('pasta', function (Blueprint $table) {
-            $table->id();
+        Schema::create('folders', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('title');
             $table->timestamps();
             $table->boolean('actived');
@@ -28,6 +28,6 @@ class CreatePastaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pasta');
+        Schema::dropIfExists('folders');
     }
 }
